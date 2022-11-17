@@ -7,6 +7,7 @@ import FormAddUser from "./components/FormAddUser";
 function App() {
   const [userInfo, setUserInfo] = useState();
   const [show, setShow] = useState(false);
+  const [show1, setShow1] = useState();
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -24,26 +25,47 @@ function App() {
     fetch("http://localhost:8080/api/v1/add-new-user", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ 
+      body: JSON.stringify({
         name: newUserInfo.name,
-        surName:newUserInfo.surName,
+        surName: newUserInfo.surName,
         phoneNumber: newUserInfo.phoneNumber,
-        email: newUserInfo.email }),
+        email: newUserInfo.email,
+      }),
     });
   }
+ 
+
+  function deleteUserOnClick(userId) {
+    fetch(`http://localhost:8080/api/v1/delete-user/${userId}`, {
+      method: "DELETE",
+      headers: { "Content-Type": "application/json" },
+    });
+
+    setShow(false);
+  }
+  
 
   return (
     <div className="App">
       <button className="button-3" variant="primary" onClick={handleShow}>
         Add new User
       </button>
-      {userInfo && <UsersTable userInformation={userInfo}></UsersTable>}
+      {userInfo && (
+        <UsersTable
+          userInformation={userInfo}
+          onClickDelete={deleteUserOnClick}
+          
+        ></UsersTable>
+      )}
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Add New USer</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <FormAddUser onSubmitClick={postNewUSerInfo} onClickClose={handleClose}></FormAddUser>
+          <FormAddUser
+            onSubmitClick={postNewUSerInfo}
+            onClickClose={handleClose}
+          ></FormAddUser>
         </Modal.Body>
         <Modal.Footer></Modal.Footer>
       </Modal>
