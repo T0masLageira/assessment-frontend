@@ -1,4 +1,5 @@
-Francisco Perez Tomas Lageira 
+#Francisco Perez 
+#Tomas Lageira 
 
 # Getting Started with Create React App
 
