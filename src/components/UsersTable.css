@@ -6,10 +6,11 @@
 
 .button-delete{
     text-align: center;
-    background-color: darkred;
+    background-color: rgb(180, 16, 16);
     color: white;
-    
+    border:none;
     font-size: 15px;
+    padding: 1%;
 }
 
 .button-update{
@@ -18,8 +19,9 @@
     text-align: center;
     background-color: rgb(41, 86, 209);
     color: white;
-    
+    border:none;
     font-size: 15px;
+    padding: 1%;
 }
 
 h2{

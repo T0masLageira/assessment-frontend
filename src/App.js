@@ -7,7 +7,7 @@ import FormAddUser from "./components/FormAddUser";
 function App() {
   const [userInfo, setUserInfo] = useState();
   const [show, setShow] = useState(false);
-  const [show1, setShow1] = useState();
+  
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
