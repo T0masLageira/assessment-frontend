@@ -18,7 +18,6 @@ function App() {
     <div className="App">
       <button className="button-3">Add new User</button>
       {userInfo && <UsersTable userInformation={userInfo}></UsersTable>}
-      
     </div>
   );
 }
