@@ -11,6 +11,7 @@ function UsersTable(props) {
             <th>Last Name</th>
             <th>Phone Number</th>
             <th>Email</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
@@ -20,6 +21,8 @@ function UsersTable(props) {
               <td>{user.surName}</td>
               <td>{user.phoneNumber}</td>
               <td>{user.email}</td>
+              <button>Delete</button>
+              <button>Update</button>
             </tr>
           ))}
         </tbody>
